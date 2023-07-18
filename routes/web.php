@@ -18,12 +18,34 @@ Route::get('/', function () {
 });
 
 Route::get('/home' , function(){
-    return view('home');
+    $blogs = [
+        [
+            'title' => 'Title one',
+            'body' => 'this is a body text',
+            'status' => 1
+        ],
+        [
+            'title' => 'Title two',
+            'body' => 'this is a body text',
+            'status' => 0
+        ],
+        [
+            'title' => 'Title three',
+            'body' => 'this is a body text',
+            'status' => 1
+        ],
+        [
+            'title' => 'Title four',
+            'body' => 'this is a body text',
+            'status' => 1
+        ]
+    ];
+    return view('home' , compact('blogs'));
 });
 
 Route::get('about', function () {
-    return "<h1>About Page</h1>";
-})->name('hello');
+    return view('about');
+})->name('about');
 
 Route::get('contact/{id}' , function($id){
     return $id; 
