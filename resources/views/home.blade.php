@@ -30,6 +30,15 @@
         </div> 
         @endif
         @endforeach
+
+        @php
+         $i = '';
+        @endphp
+
+        @empty($i)
+            <div class="alert alert-success">Success</div>
+        @endempty
+
     </div>
 </main>
 @endsection
